@@ -30,7 +30,6 @@ def generate_code(problem_details):
     response = model.generate_content(prompt).text
     res=response.split("```")[1][1:]
     return res
-      # Trim unnecessary whitespaces
 
 @app.route('/generate_code', methods=['POST'])
 def generate_code_endpoint():
