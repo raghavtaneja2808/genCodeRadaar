@@ -38,4 +38,5 @@ def generate_code_endpoint():
     return jsonify({'generatedCode': generated_code})
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))  # Railway assigns a dynamic port
+    app.run(host="0.0.0.0", port=port)  # Ensure it binds to 0.0.0.0
